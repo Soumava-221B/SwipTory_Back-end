@@ -17,17 +17,27 @@ const port = process.env.PORT;
 app.use(express.json());
 app.use(cookieParser());
 
-const corsOptions = {
-  origin: [
-    "https://swip-tory-front-end-soumava.vercel.app/",
-    // "http://localhost:3000",
-  ],
-  optionsSuccessStatus: 200, // For legacy browser support
-  methods: "GET,PUT,POST,DELETE",
-  credentials: true,
-};
+// const corsOptions = {
+//   origin: [
+//     "https://swip-tory-front-end-soumava.vercel.app/",
+//     "http://localhost:3000",
+//   ],
+//   optionsSuccessStatus: 200, // For legacy browser support
+//   methods: "GET,PUT,POST,DELETE",
+//   credentials: true,
+// };
 
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: [
+      "https://swip-tory-front-end-soumava.vercel.app/",
+      "http://localhost:3000",
+    ],
+    credentials: true,
+  })
+);
+
+// app.use(cors(corsOptions));
 connectDB();
 
 // Routes
