@@ -30,7 +30,7 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: [
-      "https://swip-tory-front-end.netlify.app/",
+      "https://main--swip-tory-front-end.netlify.app/",
       "http://localhost:3000",
     ],
     credentials: true,
